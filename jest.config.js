@@ -1,18 +1,21 @@
-export default {
-  testEnvironment: 'node',
-  preset: 'ts-jest/presets/default-esm',
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
-  moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1',
-  },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.ts$',
-  coverageDirectory: 'coverage',
-  collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/**/*.d.ts',
+/*
+ * For a detailed explanation regarding each configuration property and type check, visit:
+ * https://jestjs.io/docs/configuration
+ */
+
+const {
+  resolve
+} = require('path');
+
+module.exports = {
+  roots: ['<rootDir>'],
+  clearMocks: true,
+  collectCoverage: true,
+  coverageDirectory: "coverage",
+  coverageProvider: "v8",
+  preset: "ts-jest",
+  setupFiles: [resolve(__dirname, './src/__tests__/setup-test.ts')],
+  testMatch: [
+    "**/**/*.spec.ts",
   ],
 };

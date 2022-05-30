@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "lib": ["ES2020"],
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "rootDir": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "rootDir": "src",
     "outDir": "build",
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
@@ -17,10 +21,9 @@
     "noUnusedParameters": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "types": ["node", "jest"]
   },
-  "include": [
-    "src/**/*",
-    "__tests__/**/*"
-  ]
+  "include": ["src/**/*", "src/__tests__/**/*"],
+  "exclude": ["node_modules"],
 }

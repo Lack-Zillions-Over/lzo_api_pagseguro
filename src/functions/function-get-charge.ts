@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 import { FunctionCreateErrorLog } from '../functions/index';
 
 import { IGetChargeResponse } from '../interfaces/index';
-import { TypeErrorMessages, TypeHeaders } from '../types/index';
+import { TypeChargeResponseError, TypeHeaders } from '../types/index';
 
 import { UtilGetApiHost } from '../utils/index';
 
@@ -25,11 +25,18 @@ const handle = async (charge_id: string, token: string) => {
 
     return data;
   } catch (error) {
-    const
-      { response: { data: { error_messages } } } = error,
-      errors = error_messages as TypeErrorMessages[];
+    let
+      { message: axiosMessage, response: { status, data } } = error as AxiosError,
+      { error_messages, message } = data as TypeChargeResponseError;
 
-    return await FunctionCreateErrorLog(errors);
+    error_messages = error_messages || [{
+      code: status.toString(),
+      description: axiosMessage,
+      message,
+      parameter_name: '',
+    }];
+
+    return await FunctionCreateErrorLog(error_messages);
   }
 };
 

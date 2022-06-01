@@ -1,4 +1,5 @@
 export { default as TypeErrorMessages } from './type-error-messages';
+export { default as TypeChargeResponseError } from './type-charge-response-error';
 export { default as TypeHeaders } from './type-headers';
 export { default as TypeStatus } from './type-status';
 export { default as TypeAmount } from './type-amount';

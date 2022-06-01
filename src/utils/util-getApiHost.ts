@@ -1,6 +1,6 @@
 const enum Host {
-  development = 'https://sandbox.api.pagseguro.com',
   production = 'https://api.pagseguro.com',
+  development = 'https://sandbox.api.pagseguro.com',
 }
 
 const handle = async () => {

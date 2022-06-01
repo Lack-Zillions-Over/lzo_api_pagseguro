@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/guilhermesantos001/lzo_api_pagseguro/compare/v0.1.1...v0.1.2) (2022-06-01)
+
+
+### Bug Fixes
+
+* **charge-bank-slip-response-custom:** fixed problem accessing the bank slip custom interface ([da25a10](https://github.com/guilhermesantos001/lzo_api_pagseguro/commit/da25a1079b5b0782bc1d913074327db6d5a88fc4))
+* **charge-response-errors:** fixed the response errors after request a new route of resource ([4ae5dc0](https://github.com/guilhermesantos001/lzo_api_pagseguro/commit/4ae5dc09e67fb02db57e61d553125918c313eda9))
+
+
+### Code Refactoring
+
+* **get-api-host:** change in the order in which routes are declared ([3d7c6f5](https://github.com/guilhermesantos001/lzo_api_pagseguro/commit/3d7c6f509eec45ac014ce0a7dac9c7a177db28c8))
+
 ### 0.1.1 (2022-05-30)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@guilhermesantos001/lzo_api_pagseguro",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Integração com a API do PagSeguro.",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
